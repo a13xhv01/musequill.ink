@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuseQuill Ink</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+        nav a.active {
+            background: #fff;
+            color: #444;
+            border-radius: 4px;
+        }
+        section {
+            display: none;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        section.active {
+            display: block;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MuseQuill Ink</h1>
+        <p><em>Where Digital Quills Meet Virtual Ink</em></p>
+    </header>
+    <nav>
+        <a href="#" data-target="vision" class="active">Vision</a>
+        <a href="#" data-target="architecture">Architecture</a>
+        <a href="#" data-target="agents">Agents</a>
+        <a href="#" data-target="workflow">Workflow</a>
+        <a href="#" data-target="capabilities">Capabilities</a>
+    </nav>
+    <section id="vision" class="active">
+        <h2>Project Vision</h2>
+        <p>MuseQuill Ink is an intelligent multi-agent system that transforms short descriptions into complete, publication-ready books. It orchestrates specialized AI agents with advanced memory systems, real-time research, and adversarial quality control.</p>
+    </section>
+    <section id="architecture">
+        <h2>System Architecture</h2>
+        <ul>
+            <li>LangGraph-powered coordination for long-running agents</li>
+            <li>Hybrid memory engine with knowledge graph and vector store</li>
+            <li>Real-time streaming for transparent writing process</li>
+        </ul>
+    </section>
+    <section id="agents">
+        <h2>Agent Ensemble</h2>
+        <ul>
+            <li>Planning, Writing, Character, Plot, and Editor agents</li>
+            <li>Memory Manager for long-term context</li>
+            <li>Critic and Proponent agents for adversarial quality assurance</li>
+        </ul>
+    </section>
+    <section id="workflow">
+        <h2>Workflow Excellence</h2>
+        <ol>
+            <li>Inspiration and research planning</li>
+            <li>Proactive research gathering</li>
+            <li>Content generation with real-time research</li>
+            <li>Quality debate and holistic review</li>
+        </ol>
+    </section>
+    <section id="capabilities">
+        <h2>Capabilities</h2>
+        <ul>
+            <li>Publication-ready quality</li>
+            <li>Scalable to full book-length projects</li>
+            <li>Complete decision trails and research documentation</li>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2024 MuseQuill Ink</p>
+    </footer>
+    <script>
+        const links = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('data-target');
+                links.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                sections.forEach(sec => {
+                    if (sec.id === target) {
+                        sec.classList.add('active');
+                    } else {
+                        sec.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
